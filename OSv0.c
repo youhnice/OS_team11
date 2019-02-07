@@ -3,6 +3,7 @@
 #include <string.h>
 #include <stdlib.h>
 
+<<<<<<< HEAD
 int main() {
 	// open file pointer
 	FILE *fp = fopen("Test.csv", "r");
@@ -38,4 +39,15 @@ int main() {
 
 	fclose(fp);
 
+=======
+int main(){
+    char buf[1024];
+    FILE *read = fopen("filename","r");
+  
+   while (fgets(buf, 1024, read){
+       char* tmp = strdup(line);
+       printf("Field 3 would be %s\n", getfield(tmp, 3));
+       free(tmp);
+    }
+>>>>>>> parent of bf6d719... Reader Done
 }
