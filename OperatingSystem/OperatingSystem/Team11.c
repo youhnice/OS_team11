@@ -1,6 +1,33 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <stdbool.h>
+
+// this is to make my bool works haha (declared enumeration)
+typedef enum { false = 0, true = !false } bool;
+
+// Structure
+typedef struct blockstruct
+{
+	int index; // might not need
+	int blockNo;
+	int start;
+	int end;
+} Block;
+
+// Block 0 has 5 Data [0,1,2,3,4]
+// 32 blocks: 1 block = 4 data/entries
+typedef struct datastruct
+{
+	int index;
+	int data[];
+	bool allocated; // true: allocated, false: otherwise (means is empty)
+} Data;
+
+// define 32 blocks
+#define NUM_BLOCKS 32
+Block physical_disk[NUM_BLOCKS];
+Data entries[4 * NUM_BLOCKS]; // entries
 
 int main() {
 	// open file pointer
